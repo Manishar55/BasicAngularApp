@@ -1,6 +1,6 @@
 <h1 class="text-xl font-bold">{{ heading }}</h1>
 
 <div *ngFor="let task of tasks; let i = index">
-  <app-task-list-item [text]="task.task"></app-task-list-item>
+  <app-task-list-item [taskItem]="task"></app-task-list-item>
 </div>
 

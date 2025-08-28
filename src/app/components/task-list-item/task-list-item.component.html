@@ -1,4 +1,10 @@
-
 <div class="bg-slate-100 border border-slate-400 rounded p-4 mt-4">
-    {{ text }}
+    {{ taskItem.task }}
+
+
+    <div>
+        <div *ngFor="let action of availableActions; let i = index">
+            <button class="px-2 py-1 text-xs border rounded mr-2 cursor-pointer">{{ action }}</button>
+        </div>
+    </div>
 </div>
