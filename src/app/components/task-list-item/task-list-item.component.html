@@ -1,10 +1,61 @@
-<div class="bg-slate-100 border border-slate-400 rounded p-4 mt-4">
-    {{ taskItem.task }}
+<!-- <div class="bg-slate-100 border border-slate-400 rounded px-2 py-2 mt-3">
+  {{ taskItem.task }}
 
-
-    <div>
-        <div *ngFor="let action of availableActions; let i = index">
-            <button class="px-2 py-1 text-xs border rounded mr-2 cursor-pointer">{{ action }}</button>
-        </div>
+  <div class="flex flex-wrap gap-2 mt-2">
+    <div *ngFor="let action of availableActions; let i = index">
+      <button
+        (click)="markAs(taskItem.task, action)"
+        class="px-2 py-1 text-sm border rounded cursor-pointer"
+      >
+        {{ action }}
+      </button>
     </div>
+  </div>
+</div> -->
+
+<!-- <div class="bg-white shadow-md border border-gray-300 rounded-lg p-4 mt-4 transition duration-300 hover:shadow-lg">
+  <div class="text-lg font-semibold text-gray-800 mb-2">
+    {{ taskItem.task }}
+  </div>
+
+  <div class="flex flex-wrap gap-3 mt-3">
+    <div *ngFor="let action of availableActions; let i = index">
+      <button
+        (click)="markAs(taskItem.task, action)"
+        class="px-3 py-1 text-sm font-medium text-white rounded transform transition duration-300 ease-in-out
+               hover:scale-105 hover:brightness-110 hover:-translate-y-0.5 focus:outline-none"
+        [ngClass]="{
+          'bg-blue-500 hover:bg-blue-600': action === 'InProgress',
+          'bg-green-500 hover:bg-green-600': action === 'Completed',
+          'bg-yellow-500 hover:bg-yellow-600': action === 'Todo'
+        }"
+      >
+        {{ action }}
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<div class="bg-white shadow-xl rounded-lg p-4 mt-4 transition duration-300 hover:shadow-gray-500/50 ease-in-out">
+
+  <div class="text-base font-medium text-gray-800 mb-3">
+    {{ taskItem.task }}
+  </div>
+
+  <div class="flex flex-wrap gap-2 mt-2">
+    <div *ngFor="let action of availableActions; let i = index">
+      <button
+        (click)="markAs(taskItem.task, action)"
+        class="px-2 py-1 text-xs font-semibold text-white rounded-md transition duration-200 ease-in-out
+               hover:scale-105 hover:brightness-110 hover:-translate-y-0.5 focus:outline-none"
+        [ngClass]="{
+          'bg-blue-500 hover:bg-blue-600': action === 'InProgress',
+          'bg-green-500 hover:bg-green-600': action === 'Completed',
+          'bg-yellow-500 hover:bg-yellow-600': action === 'Todo'
+        }"
+      >
+        {{ action }}
+      </button>
+    </div>
+  </div>
 </div>

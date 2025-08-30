@@ -1,4 +1,4 @@
-<div class="mx-w-7xl mx-auto">
+<!-- <div class="mx-w-7xl mx-auto">
   <h1 class="text-3xl font-bold text-center p-4">Task Manager</h1>
 </div>
 
@@ -8,7 +8,33 @@
   <app-task-list [tasks]="inProgessItems()" [heading]="'In Progress'"></app-task-list>
   <app-task-list [tasks]="completedItems()" [heading]="'Completed'"></app-task-list>
 
-  <!-- <div *ngFor="let item of todoItems(); let i = index">
+  <div *ngFor="let item of todoItems(); let i = index">
     <p>{{ item.task }} {{ item.status }}</p>
-  </div> -->
+  </div>
+</div> -->
+
+
+<div class="max-w-7xl mx-auto">
+  <h1 class="text-4xl font-bold text-center text-indigo-700 p-6 border-b border-gray-300 shadow-sm">
+    Task Manager
+  </h1>
 </div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+  <div class="col-span-1">
+    <app-task-form></app-task-form>
+  </div>
+
+  <div class="col-span-1">
+    <app-task-list [tasks]="todoItems()" [heading]="'Todo'"></app-task-list>
+  </div>
+
+  <div class="col-span-1">
+    <app-task-list [tasks]="inProgessItems()" [heading]="'In Progress'"></app-task-list>
+  </div>
+
+  <div class="col-span-1">
+    <app-task-list [tasks]="completedItems()" [heading]="'Completed'"></app-task-list>
+  </div>
+</div>
+
